@@ -26,7 +26,7 @@ commands = [Command(curses.KEY_UP, 'Foward...', 'forward'),
 
 
 if __name__ == '__main__':
-    host = os.getenv('SHARO_ADDR')
+    host = '10.42.0.1'
     port = 5000
 
     client_socket = socket.socket()
