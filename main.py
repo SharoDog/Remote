@@ -16,12 +16,13 @@ commands = [Command(curses.KEY_UP, 'Foward...', 'forward'),
             Command(curses.KEY_DOWN, 'Backward...', 'backward'),
             Command(curses.KEY_LEFT, 'Left...', 'left'),
             Command(curses.KEY_RIGHT, 'Right...', 'right'),
-            Command(curses.KEY_NPAGE, 'Clockwise...', 'clockwise'),
-            Command(curses.KEY_PPAGE, 'Counterclockwise...',
-                    'counterclockwise'),
+            Command(curses.KEY_PPAGE, 'Robust forward...', 'rforward'),
+            Command(curses.KEY_NPAGE, 'Robust backward...',
+                    'rbackward'),
             Command(ord(' '), 'Stand...', 'stand'),
             Command(ord('c'), 'Sit...', 'sit'),
-            Command(ord('x'), 'Lie...', 'lie')]
+            Command(ord('x'), 'Lie...', 'lie')] +\
+    [Command(ord(str(i)), f'Emote {i}...', f'emote{i}') for i in range(10)]
 
 
 if __name__ == '__main__':
