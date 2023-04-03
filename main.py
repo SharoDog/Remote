@@ -28,11 +28,11 @@ commands = [Command(curses.KEY_UP, 'Foward', 'Arrow Up', 'forward'),
 
 
 if __name__ == '__main__':
-    host = '10.42.0.1'
+    host = '192.168.68.110'
     port = 5000
 
     client_socket = socket.socket()
-    #  client_socket.connect((host, port))
+    client_socket.connect((host, port))
     os.environ.setdefault('ESCDELAY', '0')
     scr = curses.initscr()
     curses.cbreak()
@@ -55,7 +55,7 @@ if __name__ == '__main__':
                 scr.move(2, 0)
                 scr.clrtoeol()
                 scr.addstr(2, 5, cmd.text)
-                #  client_socket.send(cmd.msg.encode())
+                client_socket.send(cmd.msg.encode())
                 break
         scr.refresh()
     curses.endwin()
